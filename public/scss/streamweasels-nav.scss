@@ -1,0 +1,91 @@
+ .cp-streamweasels--nav {
+    display: none;
+}
+
+ .swti-twitch-nav {
+     padding-left:8px!important;
+     &--show-logo {
+        padding-left: 27px!important;
+     }
+     &--show-indicator {
+        // padding-right: 10px;
+    }
+     &--user-live {
+         a {
+
+         }
+     }
+     &--channel, &--team {
+        a {
+            position: relative;
+            li.current-menu-item & {
+                .swti-twitch-nav {
+                    span {
+                        display: inline-block;
+                        text-decoration: none;
+                    }
+                } 
+            }
+            &:hover, &:focus  {
+                .swti-twitch-nav {
+                    span {
+                        display: inline-block;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+     }
+     &__logo {
+         position: absolute;
+         fill: var(--nav-twitch-logo-colour);
+         left:0px;
+         top:50%;
+         transform: translateY(-50%);
+         height: 23px;
+         width: 22px;
+         svg {
+             position: absolute;
+             top:0;
+             left: 0;
+             width: 100%;
+             height: 100%;
+         }
+     }
+     &__indicator {
+        position: relative;
+        top: -3px;
+        width: 6px;
+        height: 6px;
+        display: inline-block;
+        background-color: var(--nav-online-indicator-colour);
+        border-radius: 50%;
+        &--live {
+            animation-name: LiveNow;
+            animation-duration: 1s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+     }
+     &__meta {
+         font-size: 0.8em;
+         padding-left: 8px;
+     }
+     &--channel, &--team {
+        &.current-menu-item {
+            a {
+                span {
+                    display: inline-block;
+                    text-decoration: none;
+                }
+            }
+         }
+     }
+ }
+
+ @keyframes LiveNow {
+    0% { opacity:0; }
+    25% { opacity:1; }
+    75% { opacity:1; }
+    100% { opacity:0; }
+}

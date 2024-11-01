@@ -1,0 +1,39 @@
+{
+    "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+    "preferredVersions": {
+        "php": "7.4",
+        "wp": "latest"
+    },
+    "landingPage": "/twitch-wall/",
+    "phpExtensionBundles": ["kitchen-sink"],
+    "steps": [
+        {
+            "step": "login",
+            "username": "admin",
+            "password": "password"
+        },
+        {
+            "step": "importFile",
+            "file": {
+                "resource": "url",
+                "url": "https://www.streamweasels.com/blueprints/blueprint.xml"
+            }
+        },        
+        {
+            "step": "installPlugin",
+            "pluginZipFile": {
+                "resource": "wordpress.org\/plugins",
+                "slug": "streamweasels-twitch-integration"
+            },
+            "options": {
+                "activate": true
+            }
+        },
+		{
+			"step": "runPHP",
+            "code": "<?php require '/wordpress/wp-load.php'; $swti_options = get_option('swti_options', array()); $swti_options['swti_client_id'] = 'eowwe5qeang954eydxdwb2agwh94uq'; $swti_options['swti_api_access_token'] = '9guor0ukajcrcoz47kel6b39xnv872'; $swti_options['swti_limit'] = '12'; $swti_options['swti_game'] = 'GTA V'; update_option('swti_options', $swti_options); update_option('permalink_structure', '/%postname%/');"
+	    }
+    ],
+    "description": "This blueprint sets up StreamWeasels Twitch Integration with a dummy client ID and API access token, which are used solely for this demo.",
+    "features": { "networking": true }
+}

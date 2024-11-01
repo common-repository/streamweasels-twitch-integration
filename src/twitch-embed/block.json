@@ -1,0 +1,53 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "streamweasels/twitch-embed",
+	"version": "0.1.0",
+	"title": "StreamWeasels Twitch Embed",
+	"category": "streamweasels",
+	"icon": "twitch",
+	"description": "StreamWeasels Twitch Embed - Embed a single Twitch stream.",
+	"keywords": [ "twitch", "embed" ],
+	"attributes": {
+		"channel": {
+            "type": "string",
+            "default": "monstercat"
+		},        
+		"autoplay": {
+            "type": "boolean",
+            "default": false
+		},
+		"theme": {
+            "type": "string",
+            "default": "dark"
+		},		
+		"muted": {
+            "type": "boolean",
+            "default": false
+		},
+		"embedChat": {
+            "type": "boolean",
+            "default": false
+		},
+		"width": {
+            "type": "string",
+            "default": ""
+		},
+		"height": {
+            "type": "string",
+            "default": ""
+		}		
+	},
+	"supports": {
+		"align": true,
+		"anchor": true,
+		"color": { 
+        	"background": true,
+        	"gradients": true
+    	}		
+	},
+	"textdomain": "streamweasels",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

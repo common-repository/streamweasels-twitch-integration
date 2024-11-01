@@ -1,0 +1,12 @@
+# Ignore Please #
+#################
+node_modules
+local-config.js
+
+# Temp Files #
+# ############
+*.un~
+*.css~
+*.DS_Store
+
+/vendor/

@@ -1,0 +1,49 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "streamweasels/twitch-integration",
+	"version": "0.1.0",
+	"title": "StreamWeasels Twitch Integration",
+	"category": "streamweasels",
+	"icon": "twitch",
+	"description": "StreamWeasels Twitch Integration - Best for Embedding many Twitch streams.",
+	"keywords": [ "twitch", "embed" ],
+	"attributes": {
+		"layout": {
+            "type": "string",
+            "default": "wall"
+		},        
+		"channels": {
+            "type": "string",
+            "default": ""
+		},
+		"team": {
+            "type": "string",
+            "default": ""
+		},
+		"game": {
+            "type": "string",
+            "default": ""
+		},   
+		"language": {
+            "type": "string",
+            "default": ""
+		},
+		"limit": {
+            "type": "number",
+            "default": 8
+		}			
+	},
+	"supports": {
+		"align": true,
+		"anchor": true,
+		"color": { 
+        	"background": true,
+        	"gradients": true
+    	}		
+	},
+	"textdomain": "streamweasels",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}
